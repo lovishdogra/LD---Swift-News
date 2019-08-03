@@ -12,6 +12,8 @@
 		21EBFE0D22F50CCD00E7043B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EBFE0B22F50CCD00E7043B /* Main.storyboard */; };
 		21EBFE0F22F50CD100E7043B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EBFE0E22F50CD100E7043B /* Assets.xcassets */; };
 		21EBFE1222F50CD100E7043B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EBFE1022F50CD100E7043B /* LaunchScreen.storyboard */; };
+		21EBFE1E22F6070600E7043B /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE1D22F6070600E7043B /* NetworkRequest.swift */; };
+		21EBFE2022F6074800E7043B /* SwiftNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE1F22F6074800E7043B /* SwiftNewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		21EBFE0E22F50CD100E7043B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21EBFE1122F50CD100E7043B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21EBFE1322F50CD100E7043B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21EBFE1D22F6070600E7043B /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		21EBFE1F22F6074800E7043B /* SwiftNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		21EBFE0622F50CCD00E7043B /* LD - Swift News */ = {
 			isa = PBXGroup;
 			children = (
+				21EBFE1C22F606BB00E7043B /* Networking */,
 				21EBFE1B22F50DCB00E7043B /* Controller */,
 				21EBFE1A22F50DC500E7043B /* View */,
 				21EBFE1922F50DBD00E7043B /* Model */,
@@ -67,6 +72,7 @@
 		21EBFE1922F50DBD00E7043B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				21EBFE1F22F6074800E7043B /* SwiftNewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,6 +92,14 @@
 				21EBFE0922F50CCD00E7043B /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		21EBFE1C22F606BB00E7043B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				21EBFE1D22F6070600E7043B /* NetworkRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EBFE0A22F50CCD00E7043B /* ViewController.swift in Sources */,
+				21EBFE1E22F6070600E7043B /* NetworkRequest.swift in Sources */,
+				21EBFE2022F6074800E7043B /* SwiftNewsModel.swift in Sources */,
 				21EBFE0822F50CCD00E7043B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
