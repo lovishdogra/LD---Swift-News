@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		216B8F0F22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216B8F0E22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift */; };
 		21EBFE0822F50CCD00E7043B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE0722F50CCD00E7043B /* AppDelegate.swift */; };
 		21EBFE0A22F50CCD00E7043B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE0922F50CCD00E7043B /* ViewController.swift */; };
 		21EBFE0D22F50CCD00E7043B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EBFE0B22F50CCD00E7043B /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		216B8F0E22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCollectionViewCell.swift; sourceTree = "<group>"; };
 		21EBFE0422F50CCD00E7043B /* LD - Swift News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LD - Swift News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EBFE0722F50CCD00E7043B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21EBFE0922F50CCD00E7043B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		21EBFE1F22F6074800E7043B /* SwiftNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNewsModel.swift; sourceTree = "<group>"; };
 		36083D4FEB31E3010B918220 /* Pods-LD - Swift News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LD - Swift News.release.xcconfig"; path = "Target Support Files/Pods-LD - Swift News/Pods-LD - Swift News.release.xcconfig"; sourceTree = "<group>"; };
 		7D6C32189F42041F289385D8 /* Pods-LD - Swift News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LD - Swift News.debug.xcconfig"; path = "Target Support Files/Pods-LD - Swift News/Pods-LD - Swift News.debug.xcconfig"; sourceTree = "<group>"; };
-		FAAB68016E364E23F63CAAD3 /* Pods_LD___Swift_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LD___Swift_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAB68016E364E23F63CAAD3 /* Pods_LD___Swift_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_LD___Swift_News.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2128833222F6999C0066AA34 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				216B8F0E22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		21EBFDFB22F50CCC00E7043B = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		21EBFE1A22F50DC500E7043B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2128833222F6999C0066AA34 /* Cell */,
 				21EBFE0B22F50CCD00E7043B /* Main.storyboard */,
 				21EBFE1022F50CD100E7043B /* LaunchScreen.storyboard */,
 			);
@@ -123,7 +134,6 @@
 				7D6C32189F42041F289385D8 /* Pods-LD - Swift News.debug.xcconfig */,
 				36083D4FEB31E3010B918220 /* Pods-LD - Swift News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -244,6 +254,7 @@
 			files = (
 				21EBFE0A22F50CCD00E7043B /* ViewController.swift in Sources */,
 				21EBFE1E22F6070600E7043B /* NetworkRequest.swift in Sources */,
+				216B8F0F22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift in Sources */,
 				21EBFE2022F6074800E7043B /* SwiftNewsModel.swift in Sources */,
 				21EBFE0822F50CCD00E7043B /* AppDelegate.swift in Sources */,
 			);

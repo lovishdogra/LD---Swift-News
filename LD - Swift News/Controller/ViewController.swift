@@ -12,13 +12,11 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     let networkRequest = NetworkRequest()
-    private var swiftNewsData: [SwiftNewsPropModel]? = [] {
+    var swiftNewsData: [SwiftNewsPropModel]? = [] {
         didSet {
-            if swiftNewsData != nil {
                 collectionView_ArticleList.reloadData()
             }
         }
-    }
 
     // MARK: IBOutlets
     @IBOutlet weak var collectionView_ArticleList: UICollectionView!
@@ -26,22 +24,24 @@ class ViewController: UIViewController {
     // MARK: View load method
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.collectionView_ArticleList.delegate = self
         self.collectionView_ArticleList.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         networkRequest.getSwiftNews { (response, error) in
             DispatchQueue.main.async {
                 let data = response?.data?.children
                 for result in data! {
                     let newsData = result.data
                     self.swiftNewsData?.append(newsData!)
+                    //print(newsData?.thumbnail!)
                 }
             }
         }
-        
     }
-
 }
 
 // MARK: CollectionView Extension
@@ -52,8 +52,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView_ArticleList.dequeueReusableCell(withReuseIdentifier: "articleList", for: indexPath)
-        cell.backgroundColor = UIColor.gray
+        let cell = self.collectionView_ArticleList.dequeueReusableCell(withReuseIdentifier: "articleList", for: indexPath) as! ArticleListCollectionViewCell
+        //cell.backgroundColor = UIColor.gray
+        cell.layer.borderWidth = 0.2
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.cornerRadius = 5
+        
+        if let data = self.swiftNewsData?[indexPath.row] {
+            cell.setupTitle(title: data.title!)
+            cell.setupImage(imageURL: data.thumbnail!)
+            //cell.setupCellLayout(title: data.title!, imageURL: data.thumbnail ?? "")
+        }
+        
         return cell
     }
     
