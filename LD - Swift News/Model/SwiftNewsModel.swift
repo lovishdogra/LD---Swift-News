@@ -9,20 +9,20 @@
 import Foundation
 
 struct SwiftNewsModel: Codable {
-    var data: ChildrenProp?
+    var data: ChildrenPropModel?
 }
 
-struct ChildrenProp: Codable {
+struct ChildrenPropModel: Codable {
     var dist: Int?
-    var children: [DataProp]?
+    var children: [DataPropModel]?
     var after: String?
 }
 
-struct DataProp: Codable {
-    var data: SwiftNewsProp?
+struct DataPropModel: Codable {
+    var data: SwiftNewsPropModel?
 }
 
-struct SwiftNewsProp: Codable {
+struct SwiftNewsPropModel: Codable {
     var selftext: String?
     var title: String?
     var thumbnail: String?
