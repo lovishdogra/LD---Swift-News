@@ -15,28 +15,23 @@ class ArticleDetailViewController: UIViewController {
     var articleTitle: String!
     var articleDetail: String!
     var articleImage: String?
-    //var detail: SwiftNewsPropModel?
     
+    // MARK: IBOutlets
     @IBOutlet weak var imageviewThumbnail: UIImageView!
     @IBOutlet weak var labelArticleDetail: UILabel!
     @IBOutlet weak var topConstraint_articleDetail: NSLayoutConstraint!
     
+    // MARK: View load methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = self.articleTitle
-        
-//        print("🚀")
-//        print("articleDetail: \(self.detail?.selftext)")
-//        print("articleImage: \(self.detail?.thumbnail)")
-//        print("📱")
-        
     }
     
     override func viewDidLayoutSubviews() {
         setupArticleLayout(detail: self.articleDetail, imageURL: self.articleImage ?? "")
     }
     
+    // MARK: Custom Methods
     func setupArticleLayout(detail: String, imageURL: String) {
         self.labelArticleDetail.text = self.articleDetail
         print(self.articleDetail as Any)

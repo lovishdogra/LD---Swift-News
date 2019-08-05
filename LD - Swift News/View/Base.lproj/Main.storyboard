@@ -92,14 +92,14 @@
             <objects>
                 <viewController id="AXg-xx-pdm" customClass="ArticleDetailViewController" customModule="LD___Swift_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lgF-jI-LKF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9z-qK-jyZ">
-                                <rect key="frame" x="0.0" y="140" width="375" height="860"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A82-am-Z3d">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-dD-e6h">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
@@ -119,7 +119,7 @@
                                             <constraint firstItem="WFM-dD-e6h" firstAttribute="leading" secondItem="A82-am-Z3d" secondAttribute="leading" id="BVb-HG-LL9"/>
                                             <constraint firstItem="WFM-dD-e6h" firstAttribute="top" secondItem="A82-am-Z3d" secondAttribute="top" id="Dkd-09-zXb"/>
                                             <constraint firstAttribute="trailing" secondItem="eEU-MG-xk9" secondAttribute="trailing" constant="8" id="Rb4-Oa-qTG"/>
-                                            <constraint firstAttribute="height" constant="1360" id="TWM-IY-Xl7"/>
+                                            <constraint firstAttribute="height" constant="1000" id="TWM-IY-Xl7"/>
                                             <constraint firstAttribute="trailing" secondItem="WFM-dD-e6h" secondAttribute="trailing" id="YbE-tm-C8X"/>
                                             <constraint firstItem="eEU-MG-xk9" firstAttribute="leading" secondItem="A82-am-Z3d" secondAttribute="leading" constant="8" id="eqV-g4-sMi"/>
                                             <constraint firstItem="eEU-MG-xk9" firstAttribute="top" secondItem="A82-am-Z3d" secondAttribute="top" constant="218" id="gBQ-7J-1oq"/>
@@ -128,7 +128,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="A82-am-Z3d" firstAttribute="leading" secondItem="w9z-qK-jyZ" secondAttribute="leading" id="14d-AN-PIX"/>
-                                    <constraint firstAttribute="bottom" secondItem="A82-am-Z3d" secondAttribute="bottom" constant="-500" id="CwI-nH-W0M"/>
+                                    <constraint firstAttribute="bottom" secondItem="A82-am-Z3d" secondAttribute="bottom" constant="-328" id="CwI-nH-W0M"/>
                                     <constraint firstAttribute="trailing" secondItem="A82-am-Z3d" secondAttribute="trailing" id="ZFn-03-grn"/>
                                     <constraint firstItem="A82-am-Z3d" firstAttribute="centerX" secondItem="w9z-qK-jyZ" secondAttribute="centerX" id="gPr-gt-JYu"/>
                                     <constraint firstItem="A82-am-Z3d" firstAttribute="top" secondItem="w9z-qK-jyZ" secondAttribute="top" id="raT-Ck-vxk"/>
@@ -144,7 +144,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xUi-WS-SJB"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="imageviewThumbnail" destination="WFM-dD-e6h" id="eUm-Ud-Tm4"/>
                         <outlet property="labelArticleDetail" destination="eEU-MG-xk9" id="hcJ-Jk-wIS"/>
