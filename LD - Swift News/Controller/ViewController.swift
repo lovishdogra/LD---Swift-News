@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
+    var activityIndicator: UIActivityIndicatorView?
     let networkRequest = NetworkRequest()
     var swiftNewsData: [SwiftNewsPropModel]? = [] {
         didSet {
@@ -27,15 +28,22 @@ class ViewController: UIViewController {
         self.collectionView_ArticleList.delegate = self
         self.collectionView_ArticleList.dataSource = self
         
+        showActivityIndicator()
+        
         networkRequest.getSwiftNews { (response, error) in
             DispatchQueue.main.async {
                 let data = response?.data?.children
                 for result in data! {
                     let newsData = result.data
                     self.swiftNewsData?.append(newsData!)
+                    self.activityIndicator?.stopAnimating()
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.activityIndicator?.startAnimating()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,6 +57,17 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func showActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator?.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        activityIndicator?.center = self.view.center
+        activityIndicator?.hidesWhenStopped = true
+        activityIndicator?.style = .whiteLarge
+        self.view.addSubview(activityIndicator!)
+        
+    }
+    
 }
 
 // MARK: CollectionView Extension
