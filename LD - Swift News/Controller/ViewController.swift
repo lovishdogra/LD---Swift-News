@@ -27,18 +27,25 @@ class ViewController: UIViewController {
         self.collectionView_ArticleList.delegate = self
         self.collectionView_ArticleList.dataSource = self
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         networkRequest.getSwiftNews { (response, error) in
             DispatchQueue.main.async {
                 let data = response?.data?.children
                 for result in data! {
                     let newsData = result.data
                     self.swiftNewsData?.append(newsData!)
-                    //print(newsData?.thumbnail!)
                 }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueArticleView" {
+            guard let index = sender as? Int else { return}
+            guard let vc = segue.destination as? ArticleDetailViewController else { return }
+            if let detail = swiftNewsData?[index] {
+                vc.articleTitle = detail.title
+                vc.articleDetail = detail.selftext
+                vc.articleImage = detail.thumbnail
             }
         }
     }
@@ -53,22 +60,33 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView_ArticleList.dequeueReusableCell(withReuseIdentifier: "articleList", for: indexPath) as! ArticleListCollectionViewCell
-        //cell.backgroundColor = UIColor.gray
-        cell.layer.borderWidth = 0.2
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.cornerRadius = 5
+        
+        cell.layer.borderWidth = 0.3
+        cell.layer.borderColor = UIColor.gray.cgColor
         
         if let data = self.swiftNewsData?[indexPath.row] {
-            cell.setupTitle(title: data.title!)
-            cell.setupImage(imageURL: data.thumbnail!)
-            //cell.setupCellLayout(title: data.title!, imageURL: data.thumbnail ?? "")
+            cell.setupCellLayout(title: data.title!, imageURL: data.thumbnail ?? "")
         }
-        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueArticleView", sender: indexPath.row)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width - 10.0, height: 165.0)
+        if let title = self.swiftNewsData?[indexPath.row].title {
+            let approximateWidthOfTitleLabel = view.frame.width - 100 - 90 - 20 - 10
+            let size = CGSize(width: approximateWidthOfTitleLabel, height: 1000)
+            let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+            let estimateFrame = NSString(string: title).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attribute, context: nil)
+            return CGSize(width: self.view.frame.width, height: estimateFrame.height + 66)
+        }
+        return CGSize(width: self.view.frame.width, height: 165.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
 }

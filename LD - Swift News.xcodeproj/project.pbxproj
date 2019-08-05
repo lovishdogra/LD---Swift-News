@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		216B8F0F22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216B8F0E22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift */; };
+		216B8F1122F77B460018F9B6 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216B8F1022F77B460018F9B6 /* ArticleDetailViewController.swift */; };
 		21EBFE0822F50CCD00E7043B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE0722F50CCD00E7043B /* AppDelegate.swift */; };
 		21EBFE0A22F50CCD00E7043B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBFE0922F50CCD00E7043B /* ViewController.swift */; };
 		21EBFE0D22F50CCD00E7043B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EBFE0B22F50CCD00E7043B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		216B8F0E22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCollectionViewCell.swift; sourceTree = "<group>"; };
+		216B8F1022F77B460018F9B6 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		21EBFE0422F50CCD00E7043B /* LD - Swift News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LD - Swift News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EBFE0722F50CCD00E7043B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21EBFE0922F50CCD00E7043B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				21EBFE0922F50CCD00E7043B /* ViewController.swift */,
+				216B8F1022F77B460018F9B6 /* ArticleDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EBFE0A22F50CCD00E7043B /* ViewController.swift in Sources */,
+				216B8F1122F77B460018F9B6 /* ArticleDetailViewController.swift in Sources */,
 				21EBFE1E22F6070600E7043B /* NetworkRequest.swift in Sources */,
 				216B8F0F22F69AFD0018F9B6 /* ArticleListCollectionViewCell.swift in Sources */,
 				21EBFE2022F6074800E7043B /* SwiftNewsModel.swift in Sources */,
